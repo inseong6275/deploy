@@ -29,12 +29,8 @@ spec:
             - name: config-volume
               mountPath: /app/config
           env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: git
-            - name: SPRING_CLOUD_CONFIG_URI
-              value: http://config-server:8888
-            - name: SPRING_APPLICATION_NAME
-              value: user-service
+            - name: SPRING_CONFIG_LOCATION
+              value: file:/app/config/application.yaml
       volumes:
         - name: config-volume
           configMap:
