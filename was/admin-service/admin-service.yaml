@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: admin-service
-          image: docker.io/inseonghwang0328/nyamnyam-post-service:latest
+          image: docker.io/inseonghwang0328/nyamnyam-admin-service:latest
           ports:
             - containerPort: 8080
           resources:
@@ -29,8 +29,12 @@ spec:
             - name: config-volume
               mountPath: /app/config
           env:
-            - name: SPRING_CONFIG_LOCATION
-              value: file:/app/config/application.properties
+            - name: SPRING_PROFILES_ACTIVE
+              value: git
+            - name: SPRING_CLOUD_CONFIG_URI
+              value: http://config-server:8888
+            - name: SPRING_APPLICATION_NAME
+              value: admin-service
       volumes:
         - name: config-volume
           configMap:
