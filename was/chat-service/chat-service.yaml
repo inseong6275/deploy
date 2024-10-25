@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: chat-service
-          image: docker.io/inseonghwang0328/nyamnyam-config-server:latest
+          image: docker.io/inseonghwang0328/nyamnyam-chat-server:latest
           ports:
             - containerPort: 8002
           resources:

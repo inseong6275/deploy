@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: gateway-server
-          image: docker.io/inseonghwang0328/nyamnyam-config-server:latest
+          image: docker.io/inseonghwang0328/nyamnyam-gateway-server:latest
           ports:
             - containerPort: 8000
           resources:
@@ -30,10 +30,10 @@ spec:
             - name: SPRING_CONFIG_LOCATION
               value: file:/app/config/application.yaml
           volumeMounts:
-            - name: gateway-volume
+            - name: config-volume
               mountPath: /app/config
       volumes:
-        - name: gateway-volume
+        - name: config-volume
           configMap:
             name: gateway-server
       imagePullSecrets:
