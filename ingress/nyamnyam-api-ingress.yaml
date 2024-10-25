@@ -12,13 +12,6 @@ spec:
     - host: api.nyamnyam.kr
       http:
         paths:
-          - path: /
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: swagger-service
-                port:
-                  number: 80
           - path: /admin(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
