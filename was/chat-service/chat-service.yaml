@@ -17,14 +17,14 @@ spec:
         - name: chat-service
           image: docker.io/inseonghwang0328/nyamnyam-chat-service:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 8002
           resources:
             requests:
-              cpu: 500m
-              memory: 250Mi
+              cpu: 100m
+              memory: 256Mi
             limits:
-              cpu: 1000m
-              memory: 1000Mi
+              cpu: 500m
+              memory: 512Mi
           volumeMounts:
             - name: config-volume
               mountPath: /app/config
@@ -46,7 +46,7 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8002
+      targetPort: 8002
   selector:
     app: chat-service
