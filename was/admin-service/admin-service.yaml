@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: admin-service
-          image: docker.io/inseonghwang0328/nyamnyam-admin-service:latest
+          image: docker.io/inseonghwang0328/nyamnyam-config-server:latest
           ports:
             - containerPort: 8001
           resources:
@@ -46,7 +46,7 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 8001
+      port: 8001  # 서비스 포트를 실제 컨테이너 포트와 일치시키기
       targetPort: 8001
   selector:
     app: admin-service
