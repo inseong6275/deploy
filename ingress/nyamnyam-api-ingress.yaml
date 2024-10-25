@@ -8,8 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    # 실제 서비스 배포용 
-    - host: api.nyamnyam.kr
+    - host: ingress-ngi-ingress-ngin-8112c-100122786-8c90ecb8a4aa.kr.lb.naverncp.com
       http:
         paths:
           - path: /gateway(/|$)(.*)
