@@ -12,38 +12,45 @@ spec:
     - host: api.nyamnyam.kr
       http:
         paths:
+          - path: /gateway(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: gateway-server
+                port:
+                  number: 8000
           - path: /admin(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: admin-service
                 port:
-                  number: 8080
+                  number: 8001
           - path: /chat(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: chat-service
                 port:
-                  number: 8080
+                  number: 8002
           - path: /post(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: post-service
                 port:
-                  number: 8080
+                  number: 8003
           - path: /restaurant(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: restaurant-service
                 port:
-                  number: 8080
+                  number: 8004
           - path: /user(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: user-service
                 port:
-                  number: 8080
+                  number: 8005
