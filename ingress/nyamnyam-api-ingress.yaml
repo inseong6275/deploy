@@ -11,42 +11,147 @@ spec:
     - host: ingress-ngi-ingress-ngin-8112c-100122786-8c90ecb8a4aa.kr.lb.naverncp.com
       http:
         paths:
-          - path: /gateway(/|$)(.*)
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: swagger-service
+                port:
+                  number: 80
+          - path: /api/gateway/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: gateway-server
                 port:
                   number: 8000
-          - path: /admin(/|$)(.*)
+          - path: /api/admin/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: admin-service
                 port:
                   number: 8001
-          - path: /chat(/|$)(.*)
+          - path: /api/follow/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8001
+          - path: /api/notice/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8001
+          - path: /api/opinion/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8001
+          - path: /api/receipt/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8001
+          - path: /api/report/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8001
+          - path: /api/chats/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: chat-service
                 port:
                   number: 8002
-          - path: /post(/|$)(.*)
+          - path: /api/chatRoom/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: chat-service
+                port:
+                  number: 8002
+          - path: /api/images/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: post-service
                 port:
                   number: 8003
-          - path: /restaurant(/|$)(.*)
+          - path: /api/posts/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 8003
+          - path: /api/images/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 8003
+          - path: /api/replies/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 8003
+          - path: /api/restaurant/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 8003
+          - path: /api/tags/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 8003
+          - path: /api/restaurant/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: restaurant-service
                 port:
                   number: 8004
-          - path: /user(/|$)(.*)
+          - path: /api/wishList/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: restaurant-service
+                port:
+                  number: 8004
+          - path: /api/user/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: user-service
+                port:
+                  number: 8005
+          - path: /api/score/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: user-service
+                port:
+                  number: 8005
+          - path: /api/thumbnails/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
