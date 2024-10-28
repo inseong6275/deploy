@@ -37,10 +37,10 @@ spec:
             - name: SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME
               value: '{cipher}faf79013cc63a0fb81f6dcc05fb88b17bef08cceefb25eb2f2cd039e19c97c8971ec1214ec51e68e850e343ef9ca8da0'  # 암호화된 username
             - name: SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD
-              value: '{cipher}4a39632d5f21d7e6b4d129c8cf904f61cc03c539e1543b1fa853b7a4daecd94b' # 암호화된 Personal Access Token
+              value: '{cipher}7915b13f9582f226a738f65212ad3b4fb8b91fb60a985114bd5b5f828b2c64fa4fd736e3df7c33726c06b8d0d67cb90e4a393d09e60a73ade7d4576581d88000' # 암호화된 Personal Access Token
           volumeMounts:
             - name: config-volume
-              mountPath: /app/config  # 설정 파일을 마운트할 경로
+              mountPath: /app/config
       volumes:
         - name: config-volume
           configMap:
