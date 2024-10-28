@@ -4,21 +4,15 @@ metadata:
   name: nyamnyam-api-ingress
   namespace: nyamnyam
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-    - host: ingress-ngi-ingress-ngin-8112c-100122786-8c90ecb8a4aa.kr.lb.naverncp.com
+    # 실제 서비스 배포용
+    - host: nyamnyam.kr
       http:
         paths:
           - path: /
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: swagger-service
-                port:
-                  number: 80
-          - path: /api/gateway/(.*)
             pathType: ImplementationSpecific
             backend:
               service:
