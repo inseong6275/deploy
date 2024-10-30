@@ -28,6 +28,8 @@ spec:
           env:
             - name: SPRING_CONFIG_LOCATION
               value: file:/app/config/application.yaml
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
           volumeMounts:
             - name: config-volume
               mountPath: /app/config
