@@ -33,7 +33,6 @@ spec:
               value: file:/app/config/application.yaml
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
-
       volumes:
         - name: config-volume
           configMap:
