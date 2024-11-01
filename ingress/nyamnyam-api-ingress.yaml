@@ -6,19 +6,19 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"  # HTTP 요청을 HTTPS로 리다이렉트
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - nyamnyam.kr
-      secretName: nyamnyam-kr-tls  # 인증서 비밀 키 이름
+      secretName: nyamnyam-kr-tls
   rules:
     - host: nyamnyam.kr
       http:
         paths:
-          - path: /api/(.*)
-            pathType: Prefix  # pathType을 Prefix로 변경하여 안정성 강화
+          - path: /api
+            pathType: Prefix
             backend:
               service:
                 name: gateway-server
