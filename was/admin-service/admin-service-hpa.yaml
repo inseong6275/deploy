@@ -1,11 +1,11 @@
-apiVersion: autoscaling/v3
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: admin-service-hpa
   namespace: nyamnyam
 spec:
   scaleTargetRef:
-    apiVersion: apps/v2
+    apiVersion: apps/v1
     kind: Deployment
     name: admin-service
   minReplicas: 1
