@@ -15,13 +15,13 @@ spec:
     spec:
       containers:
         - name: post-service
-          image: docker.io/inseonghwang0328/nyamnyam-post-service:latest
+          image: docker.io/inseonghwang0328/nyamnyam-post-service:0.01
           ports:
             - containerPort: 8003
           resources:
             requests:
               cpu: 100m
-              memory: 256Mi
+              memory: 128Mi
             limits:
               cpu: 500m
               memory: 512Mi

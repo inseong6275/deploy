@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
         - name: eureka-server
-          image: docker.io/inseonghwang0328/nyamnyam-eureka-server:latest
+          image: docker.io/inseonghwang0328/nyamnyam-eureka-server:0.01
           ports:
             - containerPort: 8761
           resources:
             requests:
               cpu: 100m
-              memory: 256Mi
+              memory: 128Mi
             limits:
               cpu: 500m
               memory: 512Mi
